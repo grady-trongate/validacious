@@ -3,13 +3,14 @@
 	<div class="card-heading">Task Details</div>
 	<div class="card-body">
 		<?php
-		echo validation_errors();
-		echo form_open($form_location);
+		echo form_open($form_location, array('class' =>  'highlight-errors'));
         
         echo form_label('Task Title');
+        echo validation_errors('task_title');
         echo form_input('task_title', $task_title, array('placeholder' => 'Task title...', 'autocomplete' => 'off'));
 
         echo form_label('Description');
+        echo validation_errors('description');
         echo form_textarea('description', $description, array('placeholder' => 'Enter task details here...'));
 
         echo '<label>';
@@ -29,6 +30,6 @@
 
 		echo form_close();
 		?>
-
 	</div>
 </div>
+
